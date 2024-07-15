@@ -1,0 +1,132 @@
+@import '../../responsive.scss';
+@import '../../colors.scss';
+
+.chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  .messages {
+    // background-color: blue;
+    height: 100%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 50px;
+    @include md {
+      overflow-y: initial;
+      height: initial;
+    }
+
+    h1 {
+      color: $text-mid-color;
+      font-size: 24px;
+      font-weight: normal;
+    }
+    .message {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+      span {
+        color: $text-color;
+        font-weight: bold;
+      }
+      p {
+        color: $text-light-color;
+        font-weight: bold;
+      }
+    }
+  }
+  .chatBox {
+    display: none;
+    &.active {
+      display: initial;
+    }
+    .chatHeader {
+      background-color: $warning-light-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+      button {
+        background-color: transparent;
+        width: 50px;
+        height: 50px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    .chatContent {
+      background-color: white;
+      height: 350px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+      .text {
+        width: fit-content;
+        max-width: 75%;
+        padding: 10px;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .text.to {
+        align-self: flex-end;
+      }
+      span {
+        background-color: $highlight-color;
+        width: fit-content;
+      }
+    }
+    .sendBox {
+      display: flex;
+      input {
+        flex: 1;
+        padding: 10px;
+        background-color: white;
+        border: 1px solid $border-color;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      button {
+        cursor: pointer;
+        padding: 14px 24px;
+        background-color: $warning-light-color;
+        font-size: 14px;
+        font-weight: bol;
+        border: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+}

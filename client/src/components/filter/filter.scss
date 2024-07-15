@@ -1,0 +1,59 @@
+@import '../../colors.scss';
+
+.filter {
+  h1 {
+    font-size: 21px;
+    font-weight: normal;
+  }
+  .top {
+    margin-top: 10px;
+    width: 100%;
+    .item {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 11px;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+      }
+    }
+  }
+  .bottom {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    .box {
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+
+      label {
+        font-size: 11px;
+      }
+
+      select {
+        padding: 10px;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+      }
+    }
+    button {
+      width: 100px;
+      background-color: $warning-color;
+      border: none;
+      cursor: pointer;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
